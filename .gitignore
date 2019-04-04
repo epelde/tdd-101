@@ -1,3 +1,6 @@
 # Ignore IDEA artifacts
 .idea/
 *.iml
+
+# Ignore project build output
+target/
