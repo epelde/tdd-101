@@ -3,7 +3,6 @@ package io.github.epelde.math;
 public class Fraction {
 
     private final int numerator;
-
     private final int denominator;
 
     public Fraction(int numerator) {
