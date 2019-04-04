@@ -31,7 +31,7 @@ public class Fraction {
 
     @Override
     public int hashCode() {
-        return Objects.hash(numerator, denominator);
+        return this.numerator * 100 + this.denominator;
     }
 
     @Override
