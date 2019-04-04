@@ -1,5 +1,7 @@
 package io.github.epelde.math;
 
+import java.util.Objects;
+
 public class Fraction {
 
     private final int numerator;
@@ -28,6 +30,25 @@ public class Fraction {
 
     public int getDenominator() {
         return this.denominator;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof Fraction) {
+            Fraction that = (Fraction) other;
+            return ((double)this.numerator / that.numerator) == ((double)this.denominator / that.denominator);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%d/%d", this.numerator, this.denominator);
     }
 
 }
