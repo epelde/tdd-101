@@ -15,37 +15,37 @@ public class AddFractionsTest {
 
     @Test
     public void nonZeroPlusZero() {
-        assertEquals(new Fraction(3), new Fraction(3).plus(new Fraction(0)));
+        checkAddFractionsAsIntegers(3, 0, 3);
     }
 
     @Test
     public void zeroPlusNonZero() {
-        assertEquals(new Fraction(5), new Fraction(0).plus(new Fraction(5)));
+        checkAddFractionsAsIntegers(0, 5, 5);
     }
 
     @Test
     public void nonZeroPlusNonZero() {
-        assertEquals(new Fraction(10), new Fraction(4).plus(new Fraction(6)));
+        checkAddFractionsAsIntegers(4, 6, 10);
     }
 
     @Test
     public void negativeIntegerPlusZero() {
-        assertEquals(new Fraction(-3), new Fraction(-3).plus(new Fraction(0)));
+        checkAddFractionsAsIntegers(-3, 0, -3);
     }
 
     @Test
     public void zeroPlusNegativeInteger() {
-        assertEquals(new Fraction(-9), new Fraction(0).plus(new Fraction(-9)));
+        checkAddFractionsAsIntegers(0, -9, -9);
     }
 
     @Test
     public void negativeInputsAndNegativeOutput() {
-        assertEquals(new Fraction(-2), new Fraction(-3).plus(new Fraction(1)));
+        checkAddFractionsAsIntegers(-3, 1, -2);
     }
 
     @Test
     public void addingNegativeIntegers() {
-        assertEquals(new Fraction(-13), new Fraction(-4).plus(new Fraction(-9)));
+        checkAddFractionsAsIntegers(-4, -9, -13);
     }
 
     @Test
