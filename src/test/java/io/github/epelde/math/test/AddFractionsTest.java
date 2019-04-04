@@ -39,7 +39,7 @@ public class AddFractionsTest {
     }
 
     @Test
-    public void zeroPliusNegativeInteger() {
+    public void zeroPlusNegativeInteger() {
         final Fraction sum = new Fraction(0).plus(new Fraction(-9));
         assertEquals(-9, sum.intValue());
     }
