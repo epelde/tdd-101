@@ -47,4 +47,11 @@ public class AddFractionsTest {
     public void addingNegativeIntegers() {
         assertEquals(-13, new Fraction(-4).plus(new Fraction(-9)).intValue());
     }
+
+    @Test
+    public void nonTrivialDenominator() {
+        final Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
+        assertEquals(3, sum.getNumerator());
+        assertEquals(5, sum.getDenominator());
+    }
 }

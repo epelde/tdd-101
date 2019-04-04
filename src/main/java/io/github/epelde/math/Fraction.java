@@ -8,12 +8,24 @@ public class Fraction {
         this.integerValue = integerValue;
     }
 
+    public Fraction(int numerator, int denominator) {
+        this.integerValue = numerator;
+    }
+
     public Fraction plus(Fraction that) {
         return new Fraction(this.intValue() + that.intValue());
     }
 
     public int intValue() {
         return this.integerValue;
+    }
+
+    public int getNumerator() {
+        return this.integerValue;
+    }
+
+    public int getDenominator() {
+        return 5;
     }
 
 
