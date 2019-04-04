@@ -49,4 +49,10 @@ public class AddFractionsTest {
         final Fraction sum = new Fraction(-3).plus(new Fraction(1));
         assertEquals(-2, sum.intValue());
     }
+
+    @Test
+    public void addingNegativeIntegers() {
+        final Fraction sum =  new Fraction(-4).plus(new Fraction(-9));
+        assertEquals(-13, sum.intValue());
+    }
 }
