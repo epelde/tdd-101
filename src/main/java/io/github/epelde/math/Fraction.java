@@ -6,8 +6,8 @@ public class Fraction {
 
     private final int denominator;
 
-    public Fraction(int integerValue) {
-        this.numerator = integerValue;
+    public Fraction(int numerator) {
+        this.numerator = numerator;
         this.denominator = 1;
     }
 
