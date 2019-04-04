@@ -10,7 +10,7 @@ public class AddFractionsTest {
 
     @Test
     public void zeroPlusZero() {
-        assertEquals(new Fraction(0), new Fraction(0).plus(new Fraction(0)));
+        checkAddFractionsAsIntegers(0, 0, 0);
     }
 
     @Test
@@ -52,5 +52,9 @@ public class AddFractionsTest {
     public void equalDenominatorSum() {
         assertEquals(new Fraction(3, 5), new Fraction(1, 5)
             .plus(new Fraction(2, 5)));
+    }
+
+    private void checkAddFractionsAsIntegers(int number1, int number2, int expectedResult) {
+        assertEquals(new Fraction(expectedResult), new Fraction(number1).plus(new Fraction(number2)));
     }
 }
