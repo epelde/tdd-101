@@ -20,23 +20,11 @@ public class Fraction {
         return new Fraction(this.numerator + that.numerator, this.denominator);
     }
 
-    public int intValue() {
-        return this.numerator;
-    }
-
-    public int getNumerator() {
-        return this.numerator;
-    }
-
-    public int getDenominator() {
-        return this.denominator;
-    }
-
     @Override
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
             Fraction that = (Fraction) other;
-            return ((double)this.numerator / that.numerator) == ((double)this.denominator / that.denominator);
+            return ((double)this.numerator / this.denominator) == ((double)that.numerator / that.denominator);
         }
         return false;
     }
