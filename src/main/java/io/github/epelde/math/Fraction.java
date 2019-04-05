@@ -19,9 +19,11 @@ public class Fraction {
             return new Fraction(this.numerator + that.numerator, this.denominator);
         } else {
             int commonDenominator = this.denominator * that.denominator;
-            int firstNumberNumerator = (commonDenominator / this.denominator) * this.numerator;
-            int secondNumberNumerator = (commonDenominator / that.denominator) * that.numerator;
-            return new Fraction(firstNumberNumerator + secondNumberNumerator, commonDenominator);
+            Fraction fractionOne = new Fraction((commonDenominator / this.denominator) * this.numerator,
+                commonDenominator);
+            Fraction fractionTwo = new Fraction((commonDenominator / that.denominator) * that.numerator,
+                commonDenominator);
+            return fractionOne.plus(fractionTwo);
         }
     }
 
