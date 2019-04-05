@@ -59,4 +59,10 @@ public class AddFractionsTest {
         assertEquals(new Fraction(5, 6),
             new Fraction(1, 3).plus(new Fraction(1, 2)));
     }
+
+    @Test
+    public void anotherDifferentDenominatorsSum() {
+        assertEquals(new Fraction(7, 18),
+            new Fraction(1, 6).plus(new Fraction(2, 9)));
+    }
 }

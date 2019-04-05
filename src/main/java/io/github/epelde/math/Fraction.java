@@ -18,7 +18,10 @@ public class Fraction {
         if (this.denominator == that.denominator) {
             return new Fraction(this.numerator + that.numerator, this.denominator);
         } else {
-            return new Fraction(5, 6);
+            int commonDenominator = this.denominator * that.denominator;
+            int firstNumberNumerator = (commonDenominator / this.denominator) * this.numerator;
+            int secondNumberNumerator = (commonDenominator / that.denominator) * that.numerator;
+            return new Fraction(firstNumberNumerator + secondNumberNumerator, commonDenominator);
         }
     }
 
