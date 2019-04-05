@@ -1,7 +1,5 @@
 package io.github.epelde.math;
 
-import java.util.Objects;
-
 public class Fraction {
 
     private final int numerator;
