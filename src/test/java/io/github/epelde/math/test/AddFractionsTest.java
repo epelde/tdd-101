@@ -10,42 +10,42 @@ public class AddFractionsTest {
 
     @Test
     public void zeroPlusZero() {
-        checkAddFractionsAsIntegers(0, 0, 0);
+        assertEquals(new Fraction(0), new Fraction(0).plus(new Fraction(0)));
     }
 
     @Test
     public void nonZeroPlusZero() {
-        checkAddFractionsAsIntegers(3, 0, 3);
+        assertEquals(new Fraction(3), new Fraction(3).plus(new Fraction(0)));
     }
 
     @Test
     public void zeroPlusNonZero() {
-        checkAddFractionsAsIntegers(0, 5, 5);
+        assertEquals(new Fraction(5), new Fraction(0).plus(new Fraction(5)));
     }
 
     @Test
     public void nonZeroPlusNonZero() {
-        checkAddFractionsAsIntegers(4, 6, 10);
+        assertEquals(new Fraction(10), new Fraction(4).plus(new Fraction(6)));
     }
 
     @Test
     public void negativeIntegerPlusZero() {
-        checkAddFractionsAsIntegers(-3, 0, -3);
+        assertEquals(new Fraction(-3), new Fraction(-3).plus(new Fraction(0)));
     }
 
     @Test
     public void zeroPlusNegativeInteger() {
-        checkAddFractionsAsIntegers(0, -9, -9);
+        assertEquals(new Fraction(-9), new Fraction(0).plus(new Fraction(-9)));
     }
 
     @Test
     public void negativeInputsAndNegativeOutput() {
-        checkAddFractionsAsIntegers(-3, 1, -2);
+        assertEquals(new Fraction(-2), new Fraction(-3).plus(new Fraction(1)));
     }
 
     @Test
     public void addingNegativeIntegers() {
-        checkAddFractionsAsIntegers(-4, -9, -13);
+        assertEquals(new Fraction(-13), new Fraction(-4).plus(new Fraction(-9)));
     }
 
     @Test
@@ -54,7 +54,4 @@ public class AddFractionsTest {
             .plus(new Fraction(2, 5)));
     }
 
-    private void checkAddFractionsAsIntegers(int number1, int number2, int expectedResult) {
-        assertEquals(new Fraction(expectedResult), new Fraction(number1).plus(new Fraction(number2)));
-    }
 }
