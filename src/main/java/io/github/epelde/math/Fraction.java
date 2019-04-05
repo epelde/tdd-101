@@ -18,12 +18,8 @@ public class Fraction {
         if (this.denominator == that.denominator) {
             return new Fraction(this.numerator + that.numerator, this.denominator);
         } else {
-            int commonDenominator = this.denominator * that.denominator;
-            Fraction fractionOne = new Fraction((commonDenominator / this.denominator) * this.numerator,
-                commonDenominator);
-            Fraction fractionTwo = new Fraction((commonDenominator / that.denominator) * that.numerator,
-                commonDenominator);
-            return fractionOne.plus(fractionTwo);
+            return new Fraction(this.numerator * that.denominator + this.denominator * that.numerator,
+                    this.denominator * that.denominator);
         }
     }
 
