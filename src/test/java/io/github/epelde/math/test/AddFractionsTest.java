@@ -39,7 +39,7 @@ public class AddFractionsTest {
     }
 
     @Test
-    public void negativeInputsAndNegativeOutput() {
+    public void negativeAndPositiveInputsWithNegativeOutput() {
         assertEquals(new Fraction(-2), new Fraction(-3).plus(new Fraction(1)));
     }
 
