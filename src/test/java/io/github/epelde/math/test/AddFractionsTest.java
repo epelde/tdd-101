@@ -26,7 +26,6 @@ public class AddFractionsTest {
                 new Fraction(-4).plus(new Fraction(-9)));
     }
 
-
     @Test
     public void addEqualDenominatorFractions() {
         assertEquals(new Fraction(3, 5),
@@ -35,8 +34,10 @@ public class AddFractionsTest {
                 new Fraction(6, 5).plus(new Fraction(-2, 5)));
         assertEquals(new Fraction(-3, 6),
                 new Fraction(-1, 6).plus(new Fraction(-2, 6)));
-        assertEquals(new Fraction(3, -4),
+        assertEquals(new Fraction(-3, 4),
                 new Fraction(2, -4).plus(new Fraction(1, -4)));
+        assertEquals(new Fraction(10, 20),
+                new Fraction(5, 20).plus(new Fraction(5, 20)));
     }
 
     @Test
