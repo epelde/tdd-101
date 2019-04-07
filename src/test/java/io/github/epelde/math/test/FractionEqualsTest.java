@@ -31,8 +31,4 @@ public class FractionEqualsTest {
         assertNotEquals(new Fraction(6), new Fraction(7));
     }
 
-    @Test
-    public void numbersAreEqualAfterReducing() {
-        assertEquals(new Fraction(3, 4), new Fraction(6, 8));
-    }
 }

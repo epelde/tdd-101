@@ -15,15 +15,19 @@ public class Fraction {
     }
 
     public Fraction plus(Fraction that) {
-        return new Fraction(this.numerator * that.denominator + this.denominator * that.numerator,
-                this.denominator * that.denominator);
+        if (this.denominator != that.denominator) {
+            return new Fraction(this.numerator * that.denominator + this.denominator * that.numerator,
+                    this.denominator * that.denominator);
+        } else {
+            return new Fraction(this.numerator + that.numerator, this.denominator);
+        }
     }
 
     @Override
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
             Fraction that = (Fraction) other;
-            return ((double)this.numerator / this.denominator) == ((double)that.numerator / that.denominator);
+            return this.numerator == that.numerator && this.denominator == that.denominator;
         }
         return false;
     }
