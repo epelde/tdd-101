@@ -30,7 +30,7 @@ public class GreatestCommonDenominatorTest {
     public void commonFactor() {
         assertEquals(2, gcd(6, 8));
         assertEquals(7, gcd(21, 56));
-        assertEquals(12, gcd(-12, -180));
+        assertEquals(12, gcd(-24, -108));
     }
 
     private int gcd(int a, int b) {
