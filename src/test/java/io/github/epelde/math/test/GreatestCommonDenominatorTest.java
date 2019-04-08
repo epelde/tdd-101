@@ -42,4 +42,8 @@ public class GreatestCommonDenominatorTest {
         assertEquals(12, NumberTheory.gcd(-24, -108));
     }
 
+    @Test
+    public void exampleWithZeros() {
+        assertEquals(1, NumberTheory.gcd(0, 0));
+    }
 }

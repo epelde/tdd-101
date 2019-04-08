@@ -8,7 +8,7 @@ public class NumberTheory {
             b = a % t;
             a = t;
         }
-        return Math.abs(a);
+        return (a != 0) ? Math.abs(a) : 1;
     }
 
 }
