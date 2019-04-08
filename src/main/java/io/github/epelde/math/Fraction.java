@@ -24,7 +24,12 @@ public class Fraction {
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
             Fraction that = (Fraction) other;
-            return this.numerator == that.numerator && this.denominator == that.denominator;
+            if (this.isPositive()) {
+                return Math.abs(this.numerator) == Math.abs(that.numerator) &&
+                        Math.abs(this.denominator) == Math.abs(that.denominator);
+            } else {
+                return this.numerator == that.numerator && this.denominator == that.denominator;
+            }
         }
         return false;
     }
@@ -37,6 +42,11 @@ public class Fraction {
     @Override
     public String toString() {
         return String.format("%d/%d", this.numerator, this.denominator);
+    }
+
+    private boolean isPositive() {
+        return this.numerator > 0 && this.denominator > 0 ||
+                this.numerator < 0 && this.denominator < 0;
     }
 
 }

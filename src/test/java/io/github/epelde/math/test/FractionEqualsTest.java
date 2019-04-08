@@ -38,7 +38,12 @@ public class FractionEqualsTest {
 
     @Test
     @Ignore
-    public void name() {
+    public void negativeSignCanBeIndistinctlyInNumeratorOrDenominator() {
         assertEquals(new Fraction(-3, 4), new Fraction(3, -4));
+    }
+
+    @Test
+    public void bothNumeratorAndDenominatorNegativeFractionsBecomePositive() {
+        assertEquals(new Fraction(3, 5), new Fraction(-3, -5));
     }
 }
