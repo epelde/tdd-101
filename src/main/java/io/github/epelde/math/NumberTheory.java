@@ -1,5 +1,9 @@
 package io.github.epelde.math;
 
+/**
+ * https://en.wikipedia.org/wiki/Euclidean_algorithm#Implementations
+ */
+
 public class NumberTheory {
 
     public static int gcd(int a, int b) {
