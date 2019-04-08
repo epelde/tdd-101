@@ -12,4 +12,11 @@ public class ReduceFractionsTest {
 
         assertEquals(new Fraction(7, 14), new Fraction(35, 70));
     }
+
+    @Test
+    public void reduceToWholeNumber() {
+        assertEquals(new Fraction(6), new Fraction(36, 6));
+
+        assertEquals(new Fraction(-4), new Fraction(8, -2));
+    }
 }
