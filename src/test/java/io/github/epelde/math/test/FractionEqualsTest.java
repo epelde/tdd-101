@@ -40,6 +40,8 @@ public class FractionEqualsTest {
     @Ignore
     public void negativeSignCanBeIndistinctlyInNumeratorOrDenominator() {
         assertEquals(new Fraction(-3, 4), new Fraction(3, -4));
+
+        assertEquals(new Fraction(3, -5), new Fraction(-3, 5));
     }
 
     @Test
@@ -47,5 +49,9 @@ public class FractionEqualsTest {
         assertEquals(new Fraction(3, 5), new Fraction(-3, -5));
 
         assertEquals(new Fraction(-3, -5), new Fraction(3, 5));
+
+        assertNotEquals(new Fraction(-3, 5), new Fraction(-3, -5));
+
+        assertNotEquals(new Fraction(3, -5), new Fraction(-3, -5));
     }
 }

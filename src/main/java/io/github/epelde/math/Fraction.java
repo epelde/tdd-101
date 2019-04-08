@@ -24,7 +24,7 @@ public class Fraction {
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
             Fraction that = (Fraction) other;
-            if (this.isPositive()) {
+            if (this.isPositive() && that.isPositive()) {
                 return Math.abs(this.numerator) == Math.abs(that.numerator) &&
                         Math.abs(this.denominator) == Math.abs(that.denominator);
             } else {
