@@ -10,6 +10,7 @@ public class FractionEqualsTest {
     @Test
     public void sameNumeratorAndDenominator() {
         assertEquals(new Fraction(3, 5), new Fraction(3, 5));
+
         assertEquals(new Fraction(-3, 4), new Fraction(-3, 4));
     }
 
@@ -26,6 +27,7 @@ public class FractionEqualsTest {
     @Test
     public void wholeNumberEqualsSameFraction() {
         assertEquals(new Fraction(5, 1), new Fraction(5));
+
         assertEquals(new Fraction(-2), new Fraction(-2, 1));
     }
 
