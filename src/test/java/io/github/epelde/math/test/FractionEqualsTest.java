@@ -45,5 +45,7 @@ public class FractionEqualsTest {
     @Test
     public void bothNumeratorAndDenominatorNegativeFractionsBecomePositive() {
         assertEquals(new Fraction(3, 5), new Fraction(-3, -5));
+
+        assertEquals(new Fraction(-3, -5), new Fraction(3, 5));
     }
 }
