@@ -63,4 +63,24 @@ public class AddFractionsTest {
                 new Fraction(3, 5).plus(new Fraction(-2, 3)));
     }
 
+    @Test
+    public void reduceToWholeNumber() {
+        assertEquals(new Fraction(1),
+                new Fraction(1, 3).plus(new Fraction(2, 3)));
+
+        assertEquals(new Fraction(-5),
+                new Fraction(-20, 2).plus(new Fraction(20, 4)));
+    }
+
+    @Test
+    public void addTwoFractionsWithReducing() {
+        assertEquals(new Fraction(17, 12),
+                new Fraction(6, 8).plus(new Fraction(2, 3)));
+
+        assertEquals(new Fraction(1, 2),
+                new Fraction(5, 20).plus(new Fraction(5, 20)));
+
+        assertEquals(new Fraction(-1, 4),
+                new Fraction(-1, 8).plus(new Fraction(-1, 8)));
+    }
 }
