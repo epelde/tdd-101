@@ -45,5 +45,9 @@ public class GreatestCommonDenominatorTest {
     @Test
     public void exampleWithZeros() {
         assertEquals(1, NumberTheory.gcd(0, 0));
+
+        assertEquals(5, NumberTheory.gcd(0, 5));
+
+        assertEquals(4, NumberTheory.gcd(4, 0));
     }
 }
