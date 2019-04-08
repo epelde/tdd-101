@@ -54,6 +54,6 @@ public class FractionEqualsTest {
 
         assertNotEquals(new Fraction(3, -5), new Fraction(-3, -5));
 
-        assertNotEquals(new Fraction(3, -5), new Fraction(-3, -5));
+        assertNotEquals(new Fraction(-3, 5), new Fraction(-3, -5));
     }
 }
