@@ -24,11 +24,10 @@ public class Fraction {
     public boolean equals(Object other) {
         if (other instanceof Fraction) {
             Fraction that = (Fraction) other;
-            if (this.isImplicitlyPositive() && that.isImplicitlyPositive()) {
+            if (this.isImplicitlyPositive() && that.isImplicitlyPositive() ||
+                !this.isImplicitlyPositive() && !that.isImplicitlyPositive() ) {
                 return Math.abs(this.numerator) == Math.abs(that.numerator) &&
                         Math.abs(this.denominator) == Math.abs(that.denominator);
-            } else {
-                return this.numerator == that.numerator && this.denominator == that.denominator;
             }
         }
         return false;
