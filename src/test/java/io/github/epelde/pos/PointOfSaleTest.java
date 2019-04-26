@@ -11,8 +11,8 @@ public class PointOfSaleTest {
 
     @Before
     public void setUp() {
-        sale = new Sale();
         display = new Display();
+        sale = new Sale(display);
     }
 
     @Test
@@ -34,14 +34,30 @@ public class PointOfSaleTest {
     }
 
     public class Sale {
-        public void onBarcode(String barcode) {
 
+        private final Display display;
+
+        Sale(Display display) {
+            this.display = display;
+        }
+
+        public void onBarcode(String barcode) {
+            if (barcode!= null && barcode.equals("6565656565")) {
+                display.setText("12.75€");
+            }
         }
     }
 
     public class Display {
+
+        String text = "";
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
         public String getText() {
-            return "12.75€";
+            return this.text;
         }
     }
 }
