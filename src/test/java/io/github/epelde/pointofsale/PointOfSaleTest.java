@@ -50,7 +50,7 @@ public class PointOfSaleTest {
 
     public class Display {
 
-        String text = "";
+        private String text = "";
 
         public void setText(String text) {
             this.text = text;
