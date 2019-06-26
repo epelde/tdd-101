@@ -1,4 +1,4 @@
-package io.github.epelde.pointofsale;
+package io.github.epelde.pos;
 
 import org.junit.Before;
 import org.junit.Test;

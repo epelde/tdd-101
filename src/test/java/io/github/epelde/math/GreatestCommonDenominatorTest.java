@@ -1,4 +1,4 @@
-package io.github.epelde.math.test;
+package io.github.epelde.math;
 
 import io.github.epelde.math.NumberTheory;
 import org.junit.Test;

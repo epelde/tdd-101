@@ -1,6 +1,5 @@
-package io.github.epelde.math.test;
+package io.github.epelde.math;
 
-import io.github.epelde.math.Fraction;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
