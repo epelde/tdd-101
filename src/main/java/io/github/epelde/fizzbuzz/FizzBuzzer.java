@@ -7,7 +7,8 @@ public class FizzBuzzer {
 
     public static void main(String[] args) {
         FizzBuzzer fizzBuzzer = new FizzBuzzer();
-        IntStream.range(1, 101).boxed()
+        IntStream.range(1, 101)
+                .boxed()
                 .collect(Collectors.toList())
                 .forEach(number -> print(fizzBuzzer.echo(number)));
     }
