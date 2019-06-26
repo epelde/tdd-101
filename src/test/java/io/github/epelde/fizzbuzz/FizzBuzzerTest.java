@@ -3,6 +3,8 @@ package io.github.epelde.fizzbuzz;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
 
 public class FizzBuzzerTest {
 
@@ -15,35 +17,35 @@ public class FizzBuzzerTest {
 
     @Test
     public void echoNumbers() {
-        Assert.assertEquals("1", fizzBuzzer.echo(1));
-        Assert.assertEquals("2", fizzBuzzer.echo(2));
-        Assert.assertEquals("4", fizzBuzzer.echo(4));
-        Assert.assertEquals("7", fizzBuzzer.echo(7));
-        Assert.assertEquals("8", fizzBuzzer.echo(8));
-        Assert.assertEquals("11", fizzBuzzer.echo(11));
-        Assert.assertEquals("13", fizzBuzzer.echo(13));
-        Assert.assertEquals("19", fizzBuzzer.echo(19));
+        assertThat("1", equalTo(fizzBuzzer.echo(1)));
+        assertThat("2", equalTo(fizzBuzzer.echo(2)));
+        assertThat("4", equalTo(fizzBuzzer.echo(4)));
+        assertThat("7", equalTo(fizzBuzzer.echo(7)));
+        assertThat("8", equalTo(fizzBuzzer.echo(8)));
+        assertThat("11", equalTo(fizzBuzzer.echo(11)));
+        assertThat("13", equalTo(fizzBuzzer.echo(13)));
+        assertThat("19", equalTo(fizzBuzzer.echo(19)));
     }
 
     @Test
     public void echoFizzWhenNumberIsMultipleOfThree() {
-        Assert.assertEquals("Fizz", fizzBuzzer.echo(3));
-        Assert.assertEquals("Fizz", fizzBuzzer.echo(6));
-        Assert.assertEquals("Fizz", fizzBuzzer.echo(9));
+        assertThat("Fizz", equalTo(fizzBuzzer.echo(3)));
+        assertThat("Fizz", equalTo(fizzBuzzer.echo(6)));
+        assertThat("Fizz", equalTo(fizzBuzzer.echo(9)));
     }
 
     @Test
     public void echoBuzzWhenNumberIsMultipleOfFive() {
-        Assert.assertEquals("Buzz", fizzBuzzer.echo(5));
-        Assert.assertEquals("Buzz", fizzBuzzer.echo(10));
-        Assert.assertEquals("Buzz", fizzBuzzer.echo(100));
+        assertThat("Buzz", equalTo(fizzBuzzer.echo(5)));
+        assertThat("Buzz", equalTo(fizzBuzzer.echo(10)));
+        assertThat("Buzz", equalTo(fizzBuzzer.echo(100)));
     }
 
     @Test
     public void echoFizzBuzzWhenNumberIsMultipleOf3And5() {
-        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(15));
-        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(45));
-        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(90));
+        assertThat("FizzBuzz", equalTo(fizzBuzzer.echo(15)));
+        assertThat("FizzBuzz", equalTo(fizzBuzzer.echo(45)));
+        assertThat("FizzBuzz", equalTo(fizzBuzzer.echo(90)));
     }
 
 }
