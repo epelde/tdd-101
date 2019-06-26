@@ -1,6 +1,16 @@
 package io.github.epelde.fizzbuzz;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class FizzBuzzer {
+
+    public static void main(String[] args) {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+        IntStream.range(1, 101).boxed()
+                .collect(Collectors.toList())
+                .forEach(number -> System.out.println(fizzBuzzer.echo(number)));
+    }
 
     public String echo(int number) {
         if (isBothMultipleOfThreeAndFive(number)) {

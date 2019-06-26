@@ -31,6 +31,7 @@ public class FizzBuzzerTest {
         assertThat("Fizz", equalTo(fizzBuzzer.echo(3)));
         assertThat("Fizz", equalTo(fizzBuzzer.echo(6)));
         assertThat("Fizz", equalTo(fizzBuzzer.echo(9)));
+        assertThat("Fizz", equalTo(fizzBuzzer.echo(99)));
     }
 
     @Test
