@@ -18,4 +18,10 @@ public class FizzBuzzerTest {
         Assert.assertEquals("19", fizzBuzzer.echo(19));
         Assert.assertEquals("100", fizzBuzzer.echo(100));
     }
+
+    @Test
+    public void echoFizzWhenNumberIsThree() {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+        Assert.assertEquals("Fizz", fizzBuzzer.echo(3));
+    }
 }
