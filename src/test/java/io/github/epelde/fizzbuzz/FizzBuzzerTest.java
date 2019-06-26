@@ -1,6 +1,5 @@
 package io.github.epelde.fizzbuzz;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
