@@ -34,4 +34,12 @@ public class FizzBuzzerTest {
         Assert.assertEquals("Buzz", fizzBuzzer.echo(100));
     }
 
+    @Test
+    public void echoFizzBuzzWhenNumberIsMiltipleOf3And5() {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(15));
+        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(45));
+        Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(90));
+    }
+
 }
