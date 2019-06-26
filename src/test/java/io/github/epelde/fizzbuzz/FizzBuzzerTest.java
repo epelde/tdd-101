@@ -24,4 +24,11 @@ public class FizzBuzzerTest {
         FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("Fizz", fizzBuzzer.echo(3));
     }
+
+    @Test
+    public void echoFizzWhenNumberIsFive() {
+        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+        Assert.assertEquals("Buzz", fizzBuzzer.echo(5));
+    }
+
 }
