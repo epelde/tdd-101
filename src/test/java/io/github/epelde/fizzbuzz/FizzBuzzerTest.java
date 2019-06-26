@@ -1,13 +1,20 @@
 package io.github.epelde.fizzbuzz;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class FizzBuzzerTest {
 
+    private FizzBuzzer fizzBuzzer;
+
+    @Before
+    public void setUp() {
+        fizzBuzzer = new FizzBuzzer();
+    }
+
     @Test
     public void echoNumbers() {
-        FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("1", fizzBuzzer.echo(1));
         Assert.assertEquals("2", fizzBuzzer.echo(2));
         Assert.assertEquals("4", fizzBuzzer.echo(4));
@@ -20,7 +27,6 @@ public class FizzBuzzerTest {
 
     @Test
     public void echoFizzWhenNumberIsMultipleOfThree() {
-        FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("Fizz", fizzBuzzer.echo(3));
         Assert.assertEquals("Fizz", fizzBuzzer.echo(6));
         Assert.assertEquals("Fizz", fizzBuzzer.echo(9));
@@ -28,15 +34,13 @@ public class FizzBuzzerTest {
 
     @Test
     public void echoBuzzWhenNumberIsMultipleOfFive() {
-        FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("Buzz", fizzBuzzer.echo(5));
         Assert.assertEquals("Buzz", fizzBuzzer.echo(10));
         Assert.assertEquals("Buzz", fizzBuzzer.echo(100));
     }
 
     @Test
-    public void echoFizzBuzzWhenNumberIsMiltipleOf3And5() {
-        FizzBuzzer fizzBuzzer = new FizzBuzzer();
+    public void echoFizzBuzzWhenNumberIsMultipleOf3And5() {
         Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(15));
         Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(45));
         Assert.assertEquals("FizzBuzz", fizzBuzzer.echo(90));
