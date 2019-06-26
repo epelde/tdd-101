@@ -9,7 +9,11 @@ public class FizzBuzzer {
         FizzBuzzer fizzBuzzer = new FizzBuzzer();
         IntStream.range(1, 101).boxed()
                 .collect(Collectors.toList())
-                .forEach(number -> System.out.println(fizzBuzzer.echo(number)));
+                .forEach(number -> print(fizzBuzzer.echo(number)));
+    }
+
+    private static void print(String text) {
+        System.out.println(text);
     }
 
     public String echo(int number) {
