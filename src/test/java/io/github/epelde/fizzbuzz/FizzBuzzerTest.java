@@ -16,19 +16,22 @@ public class FizzBuzzerTest {
         Assert.assertEquals("11", fizzBuzzer.echo(11));
         Assert.assertEquals("13", fizzBuzzer.echo(13));
         Assert.assertEquals("19", fizzBuzzer.echo(19));
-        Assert.assertEquals("100", fizzBuzzer.echo(100));
     }
 
     @Test
-    public void echoFizzWhenNumberIsThree() {
+    public void echoFizzWhenNumberIsMultipleOfThree() {
         FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("Fizz", fizzBuzzer.echo(3));
+        Assert.assertEquals("Fizz", fizzBuzzer.echo(6));
+        Assert.assertEquals("Fizz", fizzBuzzer.echo(9));
     }
 
     @Test
-    public void echoFizzWhenNumberIsFive() {
+    public void echoBuzzWhenNumberIsMultipleOfFive() {
         FizzBuzzer fizzBuzzer = new FizzBuzzer();
         Assert.assertEquals("Buzz", fizzBuzzer.echo(5));
+        Assert.assertEquals("Buzz", fizzBuzzer.echo(10));
+        Assert.assertEquals("Buzz", fizzBuzzer.echo(100));
     }
 
 }
