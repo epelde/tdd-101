@@ -27,7 +27,7 @@ public class PointOfSaleTest {
 
     @Test
     @Ignore
-    public void displaypriceOnAnotherProductFound() {
+    public void displayPriceOnAnotherProductFound() {
         sale.onBarcode("7878787878");
 
         assertEquals("9.45€", display.getText());
