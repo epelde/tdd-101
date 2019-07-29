@@ -1,8 +1,10 @@
 package io.github.epelde.pos;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,7 +17,10 @@ public class PointOfSaleTest {
     @Before
     public void setUp() {
         display = new Display();
-        sale = new Sale(display);
+        Map<String, String> catalog = new HashMap<>();
+        catalog.put("6565656565", "12.75€");
+        catalog.put("7878787878", "9.45€");
+        sale = new Sale(display, catalog);
     }
 
     @Test
@@ -57,15 +62,16 @@ public class PointOfSaleTest {
 
         private final Display display;
 
-        Sale(Display display) {
+        private Map<String, String> catalog;
+
+        Sale(Display display, Map<String, String> catalog) {
             this.display = display;
+            this.catalog = catalog;
         }
 
         public void onBarcode(String barcode) {
-            if (barcode != null && barcode.equals("6565656565")) {
-                display.setText("12.75€");
-            } else if (barcode != null && barcode.equals("7878787878")) {
-                display.setText("9.45€");
+            if (catalog.containsKey(barcode)) {
+                display.setText(catalog.get(barcode));
             } else {
                 display.setText("Product not found");
             }
