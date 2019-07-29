@@ -26,7 +26,6 @@ public class PointOfSaleTest {
     }
 
     @Test
-    @Ignore
     public void displayPriceOnAnotherProductFound() {
         sale.onBarcode("7878787878");
 
@@ -65,6 +64,8 @@ public class PointOfSaleTest {
         public void onBarcode(String barcode) {
             if (barcode != null && barcode.equals("6565656565")) {
                 display.setText("12.75€");
+            } else if (barcode != null && barcode.equals("7878787878")) {
+                display.setText("9.45€");
             } else {
                 display.setText("Product not found");
             }
