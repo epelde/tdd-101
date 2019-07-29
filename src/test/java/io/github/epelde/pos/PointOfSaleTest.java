@@ -14,27 +14,32 @@ public class PointOfSaleTest {
 
     private Display display;
 
+    private static final String BARCODE_PRODUCT_1 = "6565656565";
+    private static final String PRICE_PRODUCT_1 = "12.75€";
+    private static final String BARCODE_PRODUCT_2 = "7878787878";
+    private static final String PRICE_PRODUCT_2 = "9.45€";
+
     @Before
     public void setUp() {
         display = new Display();
         Map<String, String> catalog = new HashMap<>();
-        catalog.put("6565656565", "12.75€");
-        catalog.put("7878787878", "9.45€");
+        catalog.put(BARCODE_PRODUCT_1, PRICE_PRODUCT_1);
+        catalog.put(BARCODE_PRODUCT_2, PRICE_PRODUCT_2);
         sale = new Sale(display, catalog);
     }
 
     @Test
     public void displayedPriceOnProductFound() {
-        sale.onBarcode("6565656565");
+        sale.onBarcode(BARCODE_PRODUCT_1);
 
-        assertEquals("12.75€", display.getText());
+        assertEquals(PRICE_PRODUCT_1, display.getText());
     }
 
     @Test
     public void displayPriceOnAnotherProductFound() {
-        sale.onBarcode("7878787878");
+        sale.onBarcode(BARCODE_PRODUCT_2);
 
-        assertEquals("9.45€", display.getText());
+        assertEquals(PRICE_PRODUCT_2, display.getText());
     }
 
     @Test
