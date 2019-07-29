@@ -14,9 +14,9 @@ public class PointOfSaleTest {
 
     private Display display;
 
-    private static final String BARCODE_PRODUCT_1 = "6565656565";
+    private static final String BARCODE_PRODUCT_1 = "1234567890";
     private static final String PRICE_PRODUCT_1 = "12.75€";
-    private static final String BARCODE_PRODUCT_2 = "7878787878";
+    private static final String BARCODE_PRODUCT_2 = "2345678901";
     private static final String PRICE_PRODUCT_2 = "9.45€";
 
     @Before
@@ -46,7 +46,7 @@ public class PointOfSaleTest {
     public void displayProductNotFoundMessageOnNonExistingProduct() {
         sale.onBarcode("NON_EXISTING_PRODUCT_BARCODE");
 
-        assertEquals("Product not found", display.getText());
+        assertEquals("Product not found NON_EXISTING_PRODUCT_BARCODE", display.getText());
     }
 
     @Test
@@ -78,8 +78,15 @@ public class PointOfSaleTest {
             if (catalog.containsKey(barcode)) {
                 display.setText(catalog.get(barcode));
             } else {
-                display.setText("Product not found");
+                display.setText(getNotFoundMessage(barcode));
             }
+        }
+
+        private String getNotFoundMessage(String barcode) {
+            if (barcode == null || barcode.equals("")) {
+                return "Product not found";
+            }
+            return "Product not found " + barcode;
         }
     }
 
