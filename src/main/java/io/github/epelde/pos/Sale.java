@@ -14,17 +14,26 @@ public class Sale {
     }
 
     public void onBarcode(String barcode) {
-        if (catalog.containsKey(barcode)) {
-            display.setText(catalog.get(barcode));
+        if (isProductInCatalog(barcode)) {
+            displayProductPrice(barcode);
         } else {
-            display.setText(getNotFoundMessage(barcode));
+            displayProductNotFoundMessage(barcode);
         }
     }
 
-    private String getNotFoundMessage(String barcode) {
-        if (barcode == null || barcode.equals("")) {
-            return "Product not found";
+    private boolean isProductInCatalog(String barcode) {
+        return this.catalog.containsKey(barcode);
+    }
+
+    private void displayProductPrice(String barcode) {
+        this.display.setText(this.catalog.get(barcode));
+    }
+
+    private void displayProductNotFoundMessage(String barcode) {
+        String message = "Product not found";
+        if (barcode != null && !barcode.equals("")) {
+            message += " " + barcode;
         }
-        return "Product not found " + barcode;
+        this.display.setText(message);
     }
 }
