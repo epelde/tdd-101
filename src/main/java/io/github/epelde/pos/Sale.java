@@ -17,7 +17,7 @@ public class Sale {
         if (isProductInCatalog(barcode)) {
             displayProductPrice(barcode);
         } else {
-            displayProductNotFoundMessage(barcode);
+            displayErrorMessage(barcode);
         }
     }
 
@@ -29,7 +29,7 @@ public class Sale {
         this.display.setText(this.catalog.get(barcode));
     }
 
-    private void displayProductNotFoundMessage(String barcode) {
+    private void displayErrorMessage(String barcode) {
         String message = "Scanning error: empty barcode";
         if (!isBarcodeEmpty(barcode)) {
             message = "Product not found " + barcode;
