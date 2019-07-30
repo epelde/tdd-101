@@ -30,9 +30,9 @@ public class Sale {
     }
 
     private void displayProductNotFoundMessage(String barcode) {
-        String message = "Product not found";
+        String message = "Scanning error: empty barcode";
         if (barcode != null && !barcode.equals("")) {
-            message += " " + barcode;
+            message = "Product not found " + barcode;
         }
         this.display.setText(message);
     }

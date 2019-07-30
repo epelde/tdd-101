@@ -53,14 +53,14 @@ public class ProductScanningTests {
     public void displayProductNotFoundMessageOnBlankBarcode() {
         sale.onBarcode("");
 
-        assertEquals("Product not found", display.getText());
+        assertEquals("Scanning error: empty barcode", display.getText());
     }
 
     @Test
     public void displayProductNotFoundMessageOnNullBarcode() {
         sale.onBarcode(null);
 
-        assertEquals("Product not found", display.getText());
+        assertEquals("Scanning error: empty barcode", display.getText());
     }
 
 }
